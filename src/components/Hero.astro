@@ -1,0 +1,92 @@
+---
+import Pill from "./Pill.astro";
+import Mail from "../components/icons/Mail.astro";
+import GitHub from "../components/icons/GitHub.astro";
+import LinkedIn from "../components/icons/LinkedIn.astro";
+---
+
+<section id="hero" class="hero">
+    <img src="" alt="Karol Gonzalez Binczak" />
+    <div class="work available">Available to Work</div>
+    <h1>Hey, Im Karol</h1>
+    <p class="hero-description">
+        <span>System Administrador</span> (formally trained) and <span
+            >Self-Taught Web and Software developer</span
+        > from Spain, Malaga. Pasionate about Programming and Automation.
+    </p>
+    <a class="hero-bottom" href="/#experience">↓</a>
+    <nav class="social-nav">
+        <Pill href="https://es.linkedin.com/in/karol-gonzalez-binczak">
+            <LinkedIn />
+            LinkedIn
+        </Pill>
+        <Pill href="https://github.com/KarolGB">
+            <GitHub />
+            GitHub
+        </Pill>
+        <Pill href="mailto:karol@karolgonzalez.com">
+            <Mail />
+            karol@karolgonzalez.com
+        </Pill>
+    </nav>
+
+    <style>
+        img {
+            width: 8rem;
+            height: 8rem;
+            border-radius: 1000px;
+            max-width: 100%;
+            background-color: rgb(151, 42, 42);
+        }
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 8rem;
+        }
+        .work {
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 1000px;
+        }
+        .available {
+            border: 1px solid green;
+        }
+        .not-available {
+            border: 1px solid red;
+        }
+        .hero-description {
+            text-wrap: wrap;
+            font-weight: 500;
+            line-height: 1.75rem;
+            text-align: center;
+        }
+        .social-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding-top: 1rem;
+        }
+
+        .hero-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+
+    <script>
+        const hero = document.getElementById("hero");
+        hero?.addEventListener("wheel", (e: WheelEvent) => {
+            if (e.deltaY > 0) {
+                window.location.href = "/#experience";
+            }
+        });
+    </script>
+</section>

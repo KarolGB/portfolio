@@ -1,41 +1,80 @@
 ---
 const navElements = [
     {
-        title:"Experience",
-        url:"/#experience"
+        title: "Experience",
+        url: "/#experience",
     },
     {
-        title:"Projects",
-        url:"/#projects"
+        title: "Projects",
+        url: "/#projects",
     },
     {
-        title:"Skills",
-        url:"/#skills"
+        title: "Skills",
+        url: "/#skills",
     },
     {
-        title:"About Me",
-        url:"/#about"
-    }
-]
+        title: "About Me",
+        url: "/#about",
+    },
+];
 ---
 
-<header class="page-header">
-    <nav class="nav-header">
-        {navElements.map(element => (
-            <a class="nav-element" href={element.url}>
-                {element.title}
-            </a>
-        ))}
+<header class="page-header" id="page-header">
+    <nav id="nav-header" class="nav-header">
+        {
+            navElements.map((element) => (
+                <a class="nav-element" href={element.url}>
+                    {element.title}
+                </a>
+            ))
+        }
     </nav>
 </header>
 
+<style>
+    .page-header {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        border-radius: 0.5rem;
+        top: 1rem;
+        left: 0;
+        right: 0;
+        position: fixed;
+        z-index: 100;
+    }
+
+    .nav-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        width: fit-content;
+        padding: 0.4rem;
+        transition: all 0.2s;
+    }
+    .nav-header.nav-scrolled {
+        background-color: rgba(126, 117, 117, 0.3);
+        border-radius: 0.5rem;
+        backdrop-filter: blur(8px);
+        transition: all 0.2s;
+    }
+    .nav-element {
+        font-weight: 600;
+        transition: all 0.2s;
+    }
+    .nav-element:hover {
+        color: red;
+    }
+</style>
+
 <script>
-    const nav = document.querySelector(".nav-header")
+    const nav = document.getElementById("nav-header");
     document.addEventListener("scroll", () => {
-        if (window.scrollY > 0){
-            nav?.classList.add("scrolled")
-        }else{
-            nav?.classList.remove("scrolled")
+        if (window.scrollY > 0) {
+            nav?.classList.add("nav-scrolled");
+        } else {
+            nav?.classList.remove("nav-scrolled");
         }
-    })
+    });
 </script>

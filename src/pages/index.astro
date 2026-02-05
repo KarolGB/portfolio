@@ -1,10 +1,24 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout title="Portfolio of Karol Gonzalez Binczak - Software and Web Developer" description="Proactive Web & Software Developer. Passionate about tech and quality code. Click to see my work and contact me!" lang="en">
-	<h1>Portfolio</h1>
+<Layout
+	title="Portfolio of Karol Gonzalez Binczak - Software and Web Developer"
+	description="Proactive Web & Software Developer. Passionate about tech and quality code. Click to see my work and contact me!"
+>
+	<main>
+		<Hero />
+		<div id="experience">experience</div>
+	</main>
 </Layout>
+
+<style>
+	main {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+</style>

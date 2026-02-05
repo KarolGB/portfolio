@@ -1,0 +1,20 @@
+---
+const { href } = Astro.props;
+---
+
+<a target="_blank" role="link" class="social-nav-element" href={href}>
+    <slot />
+</a>
+
+<style>
+    .social-nav-element {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        background-color: rgba(126, 28, 21, 0.3);
+        padding: 0.5rem 1rem;
+        border-radius: 1000px;
+        font-weight: 600;
+    }
+</style>
