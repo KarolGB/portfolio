@@ -1,4 +1,6 @@
 ---
+import Header from "../components/Header.astro"
+
 const { title,description,lang } = Astro.props
 ---
 
@@ -13,15 +15,68 @@ const { title,description,lang } = Astro.props
 		<title>{title}</title>
 	</head>
 	<body>
+		<!-- Bacground of bg.ibelick.com -->
+		<div class="page-background"></div>
+		<!------->
+		<Header/>
 		<slot />
 	</body>
 </html>
 
-<style>
-	html,
-	body {
+<style is:global>
+	:root{
+		color-scheme: light dark;
+	}
+	*{
 		margin: 0;
-		width: 100%;
-		height: 100%;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	html{
+		font-family:monospace ;
+		scroll-behavior: smooth;
+	}
+	body{
+		min-height: 100dvh;
+		padding-top: 1rem;
+	}
+	/* Bacground of bg.ibelick.com */
+	.page-background{
+		position: fixed;
+		width: 100%; 
+		height: 100vh;
+		background-color: rgb(10, 10, 10);
+		background-image: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(126, 117, 117, 0.3), hsla(0, 0%, 100%, 0));
+		inset: 0;
+		z-index: -2;
+	}
+	.page-header{
+		display: flex;
+		justify-content: center;
+		border-radius: .5rem;
+		position: sticky;
+		top: 1rem;
+		left: 0;
+	}
+	.nav-header{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+		width: fit-content;
+		padding: .4rem;
+		transition: all .2s;
+
+	}
+	.nav-header.scrolled{
+		background-color: rgba(126, 117, 117, 0.3);
+		border-radius: .5rem;
+		backdrop-filter: blur(8px);
+		transition: all .2s;
+	}
+	.nav-element{
+		text-decoration: none;
+		color: white;
+		font-weight: 500;
 	}
 </style>

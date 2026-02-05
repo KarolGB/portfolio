@@ -1,0 +1,41 @@
+---
+const navElements = [
+    {
+        title:"Experience",
+        url:"/#experience"
+    },
+    {
+        title:"Projects",
+        url:"/#projects"
+    },
+    {
+        title:"Skills",
+        url:"/#skills"
+    },
+    {
+        title:"About Me",
+        url:"/#about"
+    }
+]
+---
+
+<header class="page-header">
+    <nav class="nav-header">
+        {navElements.map(element => (
+            <a class="nav-element" href={element.url}>
+                {element.title}
+            </a>
+        ))}
+    </nav>
+</header>
+
+<script>
+    const nav = document.querySelector(".nav-header")
+    document.addEventListener("scroll", () => {
+        if (window.scrollY > 0){
+            nav?.classList.add("scrolled")
+        }else{
+            nav?.classList.remove("scrolled")
+        }
+    })
+</script>
