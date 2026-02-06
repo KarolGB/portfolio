@@ -1,5 +1,7 @@
 ---
-const { title, company, date, description, role, achievments } = Astro.props;
+import Pill from "./Pill.astro";
+
+const { title, company, date, description, role, technologies } = Astro.props;
 ---
 
 <article class="experience-card">
@@ -9,10 +11,18 @@ const { title, company, date, description, role, achievments } = Astro.props;
         <p class="experience-date">{date}</p>
         <p class="experience-role">Role: {role}</p>
     </header>
-    <p class="experience-description">{description}</p>
-    <!-- <ul class="experience-achievments">
-        {achievments.map((achievment: string) => <li>{achievment}</li>)}
-    </ul> -->
+    <div class="experience-content">
+        <p class="experience-description">{description}</p>
+        <ul class="experience-technologies">
+            {
+                technologies.map((technologie: string) => (
+                    <li>
+                        <Pill>{technologie}</Pill>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
 </article>
 
 <style>
@@ -56,12 +66,17 @@ const { title, company, date, description, role, achievments } = Astro.props;
         padding-top: 2rem;
         padding-bottom: 2rem;
     }
+    .experience-technologies {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
     @media screen and (min-width: 768px) {
         .experience-card {
             flex-direction: row;
-            padding-bottom: 2rem;
         }
-        .experience-description {
+        .experience-content {
             padding-left: 4rem;
             flex: 1;
         }

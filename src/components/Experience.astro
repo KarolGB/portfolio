@@ -10,6 +10,15 @@ const experience = [
         role: "System Administrator / Junior Developer",
         description:
             "Developed internal tools to automate administrative tasks and streamline data management using PowerShell, HTA, and web technologies.",
+        technologies: [
+            "HTML",
+            "JS",
+            "CSS",
+            "VBS",
+            "PowerShell",
+            "Active Directory",
+            "SQL Server",
+        ],
         // achievements: [
         //     "Built an HTA application using HTML, JavaScript, and VBScript to simplify user interactions",
         //     "Automated Active Directory, database, and CSV processes with PowerShell scripts, reducing manual work",
@@ -22,6 +31,15 @@ const experience = [
         role: "System Administrator / Junior Developer",
         description:
             "Designed and implemented a domain-wide asset inventory system integrated with an internal .NET Web Forms application for management and remote administration.",
+        technologies: [
+            "HTML",
+            "JS",
+            "CSS",
+            ".NET",
+            "PowerShell",
+            "Active Directory",
+            "SQL Server",
+        ],
         // achievements: [
         //     "Developed PowerShell scripts to collect and manage information from domain computers in Active Directory",
         //     "Created a .NET Web Forms application with database support to visualize assets and enable remote administration",
@@ -44,6 +62,7 @@ const experience = [
                 date={experience.date}
                 description={experience.description}
                 role={experience.role}
+                technologies={experience.technologies}
             />
         ))
     }
