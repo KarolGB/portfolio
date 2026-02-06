@@ -1,0 +1,67 @@
+---
+import ExperienceCard from "./ExperienceCard.astro";
+import Work from "./icons/Work.astro";
+
+const experience = [
+    {
+        company: "Acosol S.A",
+        title: "System Administrator Intern",
+        date: "February 2025 - March 2025",
+        role: "System Administrator / Junior Developer",
+        description:
+            "Developed internal tools to automate administrative tasks and streamline data management using PowerShell, HTA, and web technologies.",
+        // achievements: [
+        //     "Built an HTA application using HTML, JavaScript, and VBScript to simplify user interactions",
+        //     "Automated Active Directory, database, and CSV processes with PowerShell scripts, reducing manual work",
+        // ],
+    },
+    {
+        company: "Acosol S.A",
+        title: "Computer Technician Intern",
+        date: "March 2024 - June 2024",
+        role: "System Administrator / Junior Developer",
+        description:
+            "Designed and implemented a domain-wide asset inventory system integrated with an internal .NET Web Forms application for management and remote administration.",
+        // achievements: [
+        //     "Developed PowerShell scripts to collect and manage information from domain computers in Active Directory",
+        //     "Created a .NET Web Forms application with database support to visualize assets and enable remote administration",
+        //     "Performed network installations, OS deployments, hardware assembly, and workstation setups",
+        // ],
+    },
+];
+---
+
+<section class="experience" id="experience">
+    <h2 class="experience-header">
+        <Work />
+        Experience
+    </h2>
+    {
+        experience.map((experience) => (
+            <ExperienceCard
+                title={experience.title}
+                company={experience.company}
+                date={experience.date}
+                description={experience.description}
+                role={experience.role}
+            />
+        ))
+    }
+</section>
+
+<style>
+    .experience {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 4rem;
+        padding-top: 4rem;
+    }
+    .experience-header {
+        display: flex;
+        align-items: center;
+        font-size: xx-large;
+        gap: 0.5rem;
+    }
+</style>
