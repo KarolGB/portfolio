@@ -58,4 +58,20 @@ const { title, description } = Astro.props;
 		inset: 0;
 		z-index: -2;
 	}
+	section {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin: auto;
+	}
+	@media screen and (min-width: 768px) {
+		section {
+			max-width: 42rem;
+		}
+	}
+	@media screen and (min-width: 1024px) {
+		section {
+			max-width: 56rem;
+		}
+	}
 </style>

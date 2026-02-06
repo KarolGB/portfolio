@@ -3,10 +3,12 @@ const { title, company, date, description, role, achievments } = Astro.props;
 ---
 
 <article class="experience-card">
-    <h3 class="experience-company">{company}</h3>
-    <h2 class="experience-title">{title}</h2>
-    <p class="experience-date">{date}</p>
-    <p class="experience-role">Role: {role}</p>
+    <header>
+        <h3 class="experience-company">{company}</h3>
+        <h2 class="experience-title">{title}</h2>
+        <p class="experience-date">{date}</p>
+        <p class="experience-role">Role: {role}</p>
+    </header>
     <p class="experience-description">{description}</p>
     <!-- <ul class="experience-achievments">
         {achievments.map((achievment: string) => <li>{achievment}</li>)}
@@ -34,21 +36,34 @@ const { title, company, date, description, role, achievments } = Astro.props;
     }
     .experience-title {
         color: rgba(255, 51, 51, 0.836);
+        padding-top: 1rem;
     }
     .experience-date {
         color: rgba(255, 51, 51, 0.719);
         font-weight: 600;
+        padding-top: 1rem;
     }
     .experience-role {
         border-left: 1px solid gray;
         padding-left: 1rem;
         font-size: 0.9rem;
         font-weight: 600;
+        margin-top: 1rem;
     }
     .experience-description {
         line-height: 1.7;
         text-wrap: pretty;
         padding-top: 2rem;
         padding-bottom: 2rem;
+    }
+    @media screen and (min-width: 768px) {
+        .experience-card {
+            flex-direction: row;
+            padding-bottom: 2rem;
+        }
+        .experience-description {
+            padding-left: 4rem;
+            flex: 1;
+        }
     }
 </style>
